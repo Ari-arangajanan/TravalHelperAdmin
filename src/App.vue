@@ -2,17 +2,20 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to TH admin.js App"/>
   <PAGES/>
+  <PAGEONE/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import PAGES from "./components/NewComponent.vue";
+import PAGEONE from "./components/pages.vue";
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     PAGES,
+    PAGEONE,
   }
 }
 </script>
