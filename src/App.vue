@@ -3,12 +3,14 @@
   <HelloWorld msg="Welcome to TH admin.js App"/>
   <PAGES/>
   <PAGEONE/>
+  <INPUTBOXES/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import PAGES from "./components/NewComponent.vue";
 import PAGEONE from "./components/pages.vue";
+import INPUTBOXES from "./components/inputboxes.vue";
 
 export default {
   name: 'App',
@@ -16,6 +18,7 @@ export default {
     HelloWorld,
     PAGES,
     PAGEONE,
+    INPUTBOXES,
   }
 }
 </script>
