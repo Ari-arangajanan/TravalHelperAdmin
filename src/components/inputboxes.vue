@@ -17,10 +17,10 @@
     <label for="">player</label>
     &nbsp; &nbsp;
     <label for="name">ari</label>
-    <input type="radio" value="name" name="player">
+    <input type="radio" value="ari" name="player" v-model="player">
     &nbsp;
     <label for="name2">sutha</label>
-    <input type="radio" value="name2" name="player" id="name2">
+    <input type="radio" value="sutha" name="player" id="name2" v-model="player">
     <br>
     <h1>selected player is {{ player }}</h1>
 </template>

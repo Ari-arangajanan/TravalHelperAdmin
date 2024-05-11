@@ -4,6 +4,7 @@
   <PAGES/>
   <PAGEONE/>
   <INPUTBOXES/>
+  <IfElseStatement/>
 </template>
 
 <script>
@@ -11,6 +12,7 @@ import HelloWorld from './components/HelloWorld.vue';
 import PAGES from "./components/NewComponent.vue";
 import PAGEONE from "./components/pages.vue";
 import INPUTBOXES from "./components/inputboxes.vue";
+import IfElseStatement from "./components/if_elseCondition.vue"
 
 export default {
   name: 'App',
@@ -19,6 +21,8 @@ export default {
     PAGES,
     PAGEONE,
     INPUTBOXES,
+    IfElseStatement,
+
   }
 }
 </script>
