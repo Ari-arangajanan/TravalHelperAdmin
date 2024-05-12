@@ -5,6 +5,7 @@
   <PAGEONE/>
   <INPUTBOXES/>
   <IfElseStatement/>
+  <for_loop/>
 </template>
 
 <script>
@@ -12,7 +13,8 @@ import HelloWorld from './components/HelloWorld.vue';
 import PAGES from "./components/NewComponent.vue";
 import PAGEONE from "./components/pages.vue";
 import INPUTBOXES from "./components/inputboxes.vue";
-import IfElseStatement from "./components/if_elseCondition.vue"
+import IfElseStatement from "./components/if_elseCondition.vue";
+import for_loop from "./components/forloop.vue";
 
 export default {
   name: 'App',
@@ -22,6 +24,7 @@ export default {
     PAGEONE,
     INPUTBOXES,
     IfElseStatement,
+    for_loop,
 
   }
 }
