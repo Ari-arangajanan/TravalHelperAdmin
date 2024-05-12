@@ -12,7 +12,7 @@
         <li v-for="data in user" :key="data">number is: {{ data.number }}</li>
     </ul>
 
-    <Child_component name="ari" :user="user" :getData="getData"/>
+    <Child_component name="ari" :user="users" :getData="getData"/>
 </template>
 <script>
 import Child_component from "./child.vue"
@@ -32,7 +32,7 @@ import Child_component from "./child.vue"
             //     email: "sutha@gmail.com",
             //     number: +2445679098774,
             // }]
-            user: {
+            users: {
                 name: "sutha",
                 email: "sutha@gmail.com",
                 number: +2445679098774,

@@ -1,7 +1,7 @@
 <template>
-    <h1 id="page2">
+    <!-- <h1 id="page2">
         Re use component
-    </h1>
+    </h1> -->
     <div class="userComponent">
         <h1>{{ data.name }}</h1>
         <h1>{{ data.email }}</h1>
