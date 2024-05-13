@@ -7,6 +7,8 @@
   <IfElseStatement/>
   <for_loop/> -->
   <form_module/>
+  <props_module/>
+  <watchersModule/>
 </template>
 
 <script>
@@ -17,6 +19,9 @@
 // import IfElseStatement from "./components/if_elseCondition.vue";
 // import for_loop from "./components/forloop.vue";
 import form_module from "./components/form.vue";
+import props_module from "./components/props.vue";
+import watchersModule from "./components/watchers.vue";
+
 export default {
   name: 'App',
   components: {
@@ -27,6 +32,8 @@ export default {
     // IfElseStatement,
     // for_loop,
     form_module,
+    props_module,
+    watchersModule,
 
   }
 }

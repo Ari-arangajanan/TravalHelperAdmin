@@ -24,6 +24,10 @@
         <button v-on:click="login">sign in</button>
     <!-- </form> -->
     <p>{{ form }}</p>
+
+    <ul>
+        <li v-for="items in fun" v-bind:key="items"> {{ items }} not submitted</li>
+    </ul>
 </template>
 <script>
 export default{
@@ -48,7 +52,7 @@ export default{
             if(this.fun.length===0){
                 alert("information submitted");
             }
-            console.log("logged in", this.form);
+            console.table   (this.form, this.fun);
         }
     }
 }
