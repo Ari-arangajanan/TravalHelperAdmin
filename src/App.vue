@@ -1,30 +1,32 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to TH admin.js App"/>
-  <PAGES/>
+  <!-- <PAGES/>
   <PAGEONE/>
   <INPUTBOXES/>
   <IfElseStatement/>
-  <for_loop/>
+  <for_loop/> -->
+  <form_module/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import PAGES from "./components/NewComponent.vue";
-import PAGEONE from "./components/pages.vue";
-import INPUTBOXES from "./components/inputboxes.vue";
-import IfElseStatement from "./components/if_elseCondition.vue";
-import for_loop from "./components/forloop.vue";
-
+// import HelloWorld from './components/HelloWorld.vue';
+// import PAGES from "./components/NewComponent.vue";
+// import PAGEONE from "./components/pages.vue";
+// import INPUTBOXES from "./components/inputboxes.vue";
+// import IfElseStatement from "./components/if_elseCondition.vue";
+// import for_loop from "./components/forloop.vue";
+import form_module from "./components/form.vue";
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    PAGES,
-    PAGEONE,
-    INPUTBOXES,
-    IfElseStatement,
-    for_loop,
+    // HelloWorld,
+    // PAGES,
+    // PAGEONE,
+    // INPUTBOXES,
+    // IfElseStatement,
+    // for_loop,
+    form_module,
 
   }
 }
