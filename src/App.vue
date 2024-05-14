@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to TH admin.js App"/>
+  <h1>Welcome to TH admin</h1>
+  <!-- <HelloWorld msg="Welcome to TH admin.js App"/> -->
   <!-- <PAGES/>
   <PAGEONE/>
   <INPUTBOXES/>
@@ -12,6 +13,18 @@
   <Sample/> -->
   <!-- <Home /> -->
   <!-- <Beforecreate/> -->
+
+ <!-- routing -->
+
+ <RouterLink to="/home">Home</RouterLink>
+ <br>
+ <RouterLink to="/login/stark">Login</RouterLink>
+ <br>
+ <RouterLink to="/signUp/newUser">SignUp</RouterLink>
+ <br>
+ <RouterView></RouterView>
+
+
 </template>
 
 <script>
