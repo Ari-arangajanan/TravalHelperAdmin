@@ -6,9 +6,12 @@
   <INPUTBOXES/>
   <IfElseStatement/>
   <for_loop/> -->
-  <form_module/>
+  <!-- <form_module/>
   <props_module/>
   <watchersModule/>
+  <Sample/> -->
+  <!-- <Home /> -->
+  <!-- <Beforecreate/> -->
 </template>
 
 <script>
@@ -18,9 +21,12 @@
 // import INPUTBOXES from "./components/inputboxes.vue";
 // import IfElseStatement from "./components/if_elseCondition.vue";
 // import for_loop from "./components/forloop.vue";
-import form_module from "./components/form.vue";
-import props_module from "./components/props.vue";
-import watchersModule from "./components/watchers.vue";
+// import form_module from "./components/form.vue";
+// import props_module from "./components/props.vue";
+// import watchersModule from "./components/watchers.vue";
+// import Sample from "./components/Sample.vue";
+// import Home from "./components/Home.vue";
+// import Beforecreate from "./components/Beforecreate.vue";
 
 export default {
   name: 'App',
@@ -31,10 +37,12 @@ export default {
     // INPUTBOXES,
     // IfElseStatement,
     // for_loop,
-    form_module,
-    props_module,
-    watchersModule,
-
+    // form_module,
+    // props_module,
+    // watchersModule,
+    // Sample,
+    // Home,
+    // Beforecreate,
   }
 }
 </script>
