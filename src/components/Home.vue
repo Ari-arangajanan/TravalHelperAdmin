@@ -9,6 +9,7 @@
     <Two />
     <Three/>
    <component :is="active" /> -->
+   <h1>lhkkjhkjg</h1>
 </template>
 <script>
 //  import One from "./One.vue";
@@ -18,12 +19,7 @@
 
     export default{
         name : "Home-Component",
-        components:{
-            // One,
-            // Two,
-            // Three,
-            // watchers
-        },
+       
         data(){
             return{
              active : "one",
