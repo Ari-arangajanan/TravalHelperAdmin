@@ -1,18 +1,18 @@
 <template>
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <div class="row d-flex justify-content-center align-items-center background-rectangle">
-      <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="col-md-6 d-flex justify-content-center align-items-center" v-if="!isMobileView">
         <img src="@/assets/travalimg1.png" alt="Travel Helper Logo" class="luggage-img" />
       </div>
-      <div class="col-md-6 d-flex justify-content-center align-items-center">
-        <div class="card p-4 shadow-lg custom-background">
+      <div :class="['col-md-6', 'd-flex', 'justify-content-center', 'align-items-center', {'col-12': isMobileView}]">
+        <div class="card p-4 shadow-lg custom-background square-card">
           <div class="text-center mb-4">
             <h1 class="h1">It is a paradise, Experience it!</h1>
           </div>
-          <form @submit.prevent="handleLogin">
-            <div class="mb-2">
+          <form @submit.prevent="handleLogin" class="w-100">
+            <div class="mb-3">
               <label for="userName" class="form-label">User name</label>
-              <input type="text" v-model="email" class="form-control" id="userName" required />
+              <input type="text" v-model="userName" class="form-control" id="userName" required />
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
@@ -23,7 +23,7 @@
                 <input type="checkbox" v-model="rememberMe" class="form-check-input" id="rememberMe" />
                 <label class="form-check-label" for="rememberMe">Remember me</label>
               </div>
-              <a href="#" @click.prevent="forgotPassword" class="text-decoration-none">Forgot Password?</a>
+              <!-- <a href="#" @click.prevent="forgotPassword" class="text-decoration-none">Forgot Password?</a> -->
             </div>
             <button type="submit" class="btn btn-primary w-100">Login</button>
           </form>
@@ -34,8 +34,58 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "LoginAdmin",
+  data() {
+    return {
+      userName: "",
+      password: "",
+      rememberMe: false,
+      isMobileView: window.innerWidth <= 576,
+    };
+  },
+  methods: {
+    checkViewport() {
+      this.isMobileView = window.innerWidth <= 576;
+    },
+
+    async handleLogin() {
+      try {
+        const response = await axios.post('admin/systemUser/login',this.$data, {
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        }
+      );
+        console.log(response.data);
+        localStorage.setItem(
+          "token",response.data
+      )
+        // Handle successful login (e.g., redirect to dashboard, store token, etc.)
+      } catch (error) {
+        if (error.response) {
+          // The request was made and the server responded with a status code that falls out of the range of 2xx
+          console.error('Response error:', error.response.data);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.error('No response received:', error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.error('Error in request setup:', error.message);
+        }
+        console.error('Error config:', error.config);
+      }
+  },
+ mounted() {
+    this.checkViewport();
+    window.addEventListener('resize', this.checkViewport);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkViewport);
+  },
+}
 };
 </script>
 
@@ -64,6 +114,13 @@ export default {
   border-color: #66b5d3;
   margin-right: 20px;
   border-radius: 5%;
+  text-align: center;
+  align-content: center;
+}
+.square-card {
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
 }
 
 .h1 {
@@ -88,18 +145,19 @@ export default {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .row {
     flex-direction: column;
   }
   .luggage-img {
-    max-width: 100%; /* Adjust as needed for smaller size */
+    max-width: 0%; /* Adjust as needed for smaller size */
     max-height: auto; /* Adjust as needed for smaller size */
   }
   .container-fluid {
-    background: url("@/assets/mobileBackground.jpg") no-repeat top center fixed;
+    background: url("@/assets/mobileBackground.jpg") no-repeat center center fixed;
     background-size: cover;
   }
+
 }
 
 </style>
