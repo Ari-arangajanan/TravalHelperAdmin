@@ -7,7 +7,7 @@
       <div class="col-md-6 d-flex justify-content-center align-items-center">
         <div class="card p-4 shadow-lg custom-background">
           <div class="text-center mb-4">
-            <h1 class="h1">It is paradise, Experience it!</h1>
+            <h1 class="h1">It is a paradise, Experience it!</h1>
           </div>
           <form @submit.prevent="handleLogin">
             <div class="mb-2">
@@ -49,7 +49,7 @@ export default {
 
 .luggage-img {
   max-width: 100%;
-  height: auto;
+  height: 50vh;
   max-height: 80vh;
   z-index: 2;
 }
@@ -62,14 +62,26 @@ export default {
   background-color: rgba(251, 250, 250, 0.5);
   border-radius: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 10vh;
 }
 
 .custom-background {
-  background-color: #66b5d3;
+  /* background-color: #66b5d3; */
+  border-color: #66b5d3;
+  margin-right: 20px;
+  border-radius: 5%;
 }
 
 .h1 {
-  color: #ffffff;
+  color: #ec8c4f;
+}
+.btn{
+  margin-bottom: 3%;
+}
+.container-fluid{
+  background: url("@/assets/mainBackground2.jpg") no-repeat top center fixed;
+  background-size: cover;
+  
 }
 
 @media (max-width: 768px) {
