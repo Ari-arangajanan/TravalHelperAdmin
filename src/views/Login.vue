@@ -83,7 +83,23 @@ export default {
     flex-direction: column;
   }
   .luggage-img {
-    max-width: 30%; /* Adjust as needed for smaller size */
+    max-width: min-content; /* Adjust as needed for smaller size */
+    max-height: min-content;
   }
 }
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+  }
+  .luggage-img {
+    max-width: 100%; /* Adjust as needed for smaller size */
+    max-height: auto; /* Adjust as needed for smaller size */
+  }
+  .container-fluid {
+    background: url("@/assets/mobileBackground.jpg") no-repeat top center fixed;
+    background-size: cover;
+  }
+}
+
 </style>

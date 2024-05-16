@@ -1,20 +1,21 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createWebHistory, createRouter } from "vue-router";
+import Login from "./../views/Login.vue";
 
-Vue.use(VueRouter)
-
-
-const route = [
+const routes = [
     {
         path: '/',
-        redirect: '/admin/home',
+        redirect: '/login/:name',
       },
-      {
-        path: '/admin/login',
-        name: 'login',
-        meta:{
-            title:'welcome'
-        },
-        component: resolve => require(['@/views/login.vue'], resolve),
-      },
-]
+    {
+        name: "Login",
+        path:"/login/:name",
+        component: Login,
+    },
+];
+const router = createRouter({
+        history: createWebHistory(),
+        routes ,
+    }
+);
+
+export default router;
