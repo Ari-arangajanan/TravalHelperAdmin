@@ -2,7 +2,7 @@
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <div class="row d-flex justify-content-center align-items-center background-rectangle">
       <div class="col-md-6 d-flex justify-content-center align-items-center">
-        <img src="@/assets/travel-helper-logo.png" alt="Travel Helper Logo" class="luggage-img" />
+        <img src="@/assets/travalimg1.png" alt="Travel Helper Logo" class="luggage-img" />
       </div>
       <div class="col-md-6 d-flex justify-content-center align-items-center">
         <div class="card p-4 shadow-lg custom-background">
@@ -43,7 +43,7 @@ export default {
 
 .luggage-img {
   max-width: 100%;
-  height: 50vh;
+  height: 60vh;
   max-height: 80vh;
   z-index: 2;
 }
@@ -73,7 +73,7 @@ export default {
   margin-bottom: 3%;
 }
 .container-fluid{
-  background: url("@/assets/mainBackground2.jpg") no-repeat top center fixed;
+  background: url("@/assets/mainBackground3.jpg") no-repeat top center fixed;
   background-size: cover;
   
 }
