@@ -53,10 +53,10 @@ export default {
 
     async handleLogin() {
       try {
-        const response = await axios.post('admin/systemUser/login',this.$data, {
-          headers: {
-            'Access-Control-Allow-Origin': '*'
-          }
+        const response = await axios.post('admin/systemUser/login', {  // Use the correct URL here
+          userName: this.userName,  // Ensure you are using the correct field name (email or userName)
+          password: this.password,
+          rememberMe: this.rememberMe,
         }
       );
         console.log(response.data);
