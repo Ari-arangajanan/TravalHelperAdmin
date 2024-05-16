@@ -40,12 +40,6 @@ export default {
 </script>
 
 <style scoped>
-/* .luggage-img {
-  max-width: 100%;
-  height: auto;
-  max-height: 80vh;
-  z-index: 2;
-} */
 
 .luggage-img {
   max-width: 100%;
