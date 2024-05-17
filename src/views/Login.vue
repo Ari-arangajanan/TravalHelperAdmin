@@ -35,6 +35,7 @@
 
 <script>
 import axios from "axios";
+import Home from "./Home.vue"
 
 export default {
   name: "LoginAdmin",
@@ -46,6 +47,9 @@ export default {
       isMobileView: window.innerWidth <= 576,
       isTabView: window.innerWidth <= 720,
     };
+  },
+  components:{
+    Home,
   },
   methods: {
     checkViewport() {
