@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <div class="row d-flex justify-content-center align-items-center background-rectangle">
-      <div class="col-md-6 d-flex justify-content-center align-items-center" v-if="!isMobileView">
+      <div class="col-md-6 d-flex justify-content-center align-items-center non-mobile-view">
         <img src="@/assets/travalimg1.png" alt="Travel Helper Logo" class="luggage-img" />
       </div>
-      <div :class="['col-md-6', 'd-flex', 'justify-content-center', 'align-items-center', {'col-12': isMobileView}]">
-        <div class="card p-4 shadow-lg custom-background square-card">
+      <div class="col-sm-6 d-flex justify-content-center align-items-center ">
+        <div class="card p-4 shadow-lg custom-background">
           <div class="text-center mb-4">
             <h1 class="h1">It is a paradise, Experience it!</h1>
           </div>
@@ -44,15 +44,17 @@ export default {
       password: "",
       rememberMe: false,
       isMobileView: window.innerWidth <= 576,
+      isTabView: window.innerWidth <= 720,
     };
   },
   methods: {
     checkViewport() {
-      this.isMobileView = window.innerWidth <= 576;
+      this.isMobileView = window.innerWidth <= 576 || window.innerWidth <= 720;
     },
 
     async handleLogin() {
       try {
+        console.log("--------------------------called");
         const response = await axios.post('admin/systemUser/login', {  // Use the correct URL here
           userName: this.userName,  // Ensure you are using the correct field name (email or userName)
           password: this.password,
@@ -91,9 +93,13 @@ export default {
 
 <style scoped>
 
+.non-mobile-view {
+  display: block;
+}
+
 .luggage-img {
   max-width: 100%;
-  height: 60vh;
+  height: 600px;
   max-height: 80vh;
   z-index: 2;
 }
@@ -112,16 +118,14 @@ export default {
 .custom-background {
   /* background-color: #66b5d3; */
   border-color: #66b5d3;
-  margin-right: 20px;
   border-radius: 5%;
   text-align: center;
   align-content: center;
-}
-.square-card {
   width: 100%;
   max-width: 400px; /* Adjust as needed */
   aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
 }
+
 
 .h1 {
   color: #ec8c4f;
@@ -135,14 +139,31 @@ export default {
   
 }
 
-@media (max-width: 768px) {
-  .row {
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* .row {
     flex-direction: column;
-  }
+  } */
   .luggage-img {
-    max-width: min-content; /* Adjust as needed for smaller size */
-    max-height: min-content;
+    max-width: 0%;
+    max-height: auto;
   }
+  .non-mobile-view {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+  .w-100{
+    max-width:400%;
+    max-height: 400px;
+  }
+
+  .background-rectangle {
+  background-color: rgba(251, 250, 250, 0.5);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 5vh;
+  }
+  
 }
 
 @media (max-width: 576px) {
@@ -157,6 +178,27 @@ export default {
     background: url("@/assets/mobileBackground.jpg") no-repeat center center fixed;
     background-size: cover;
   }
+  .non-mobile-view {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+  /* .custom-background{
+    width: 500px;
+    max-width: 576px;
+    
+  } */
+  .w-100{
+    max-width:150%;
+    max-height: 400px;
+  }
+  .background-rectangle {
+  background-color: rgba(251, 250, 250, 0.5);
+  border-radius: 2px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 1vw;
+  
+}
 
 }
 
