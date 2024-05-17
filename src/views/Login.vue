@@ -62,7 +62,6 @@ export default {
         }
       );
         console.log(response.data);
-        // save to local storage
         localStorage.setItem(
           "token",response.data
       )
@@ -140,6 +139,36 @@ export default {
   
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* .row {
+    flex-direction: column;
+  } */
+  .luggage-img {
+    max-width: 0%;
+    max-height: auto;
+  }
+  .non-mobile-view {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+  .w-100{
+    max-width:400%;
+    max-height: 400px;
+  }
+
+  .background-rectangle {
+  background-color: rgba(251, 250, 250, 0.5);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 18vh;
+  }
+  .col-sm-6{
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+}
 
 @media (max-width: 576px) {
   /* .row {
@@ -207,7 +236,11 @@ export default {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   padding: 1vw;
   
-}
+  }
+  .col-sm-6{
+    flex: 0 0 auto;
+    width: 100%;
+  }
   
 }
 
