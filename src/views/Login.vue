@@ -62,6 +62,7 @@ export default {
         }
       );
         console.log(response.data);
+        // save to local storage
         localStorage.setItem(
           "token",response.data
       )
@@ -139,37 +140,11 @@ export default {
   
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
+
+@media (max-width: 576px) {
   /* .row {
     flex-direction: column;
   } */
-  .luggage-img {
-    max-width: 0%;
-    max-height: auto;
-  }
-  .non-mobile-view {
-    display: none;
-    width: 0px;
-    height: 0px;
-  }
-  .w-100{
-    max-width:400%;
-    max-height: 400px;
-  }
-
-  .background-rectangle {
-  background-color: rgba(251, 250, 250, 0.5);
-  border-radius: 5px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  padding: 5vh;
-  }
-  
-}
-
-@media (max-width: 576px) {
-  .row {
-    flex-direction: column;
-  }
   .luggage-img {
     max-width: 0%; /* Adjust as needed for smaller size */
     max-height: auto; /* Adjust as needed for smaller size */
@@ -197,6 +172,42 @@ export default {
   border-radius: 2px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   padding: 1vw;
+  
+}
+
+@media (max-width: 768) {
+  /* .row {
+    flex-direction: column;
+  } */
+  .luggage-img {
+    max-width: 0%; /* Adjust as needed for smaller size */
+    max-height: auto; /* Adjust as needed for smaller size */
+  }
+  .container-fluid {
+    background: url("@/assets/mobileBackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  .non-mobile-view {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+  /* .custom-background{
+    width: 500px;
+    max-width: 576px;
+    
+  } */
+  .w-100{
+    max-width:150%;
+    max-height: 400px;
+  }
+  .background-rectangle {
+  background-color: rgba(251, 250, 250, 0.5);
+  border-radius: 2px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 1vw;
+  
+}
   
 }
 
