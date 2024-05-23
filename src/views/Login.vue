@@ -35,7 +35,8 @@
 
 <script>
 import axios from "axios";
-import Home from "./Home.vue"
+import Cookies from "js-cookie";
+// import Home from "./Home.vue"
 
 export default {
   name: "LoginAdmin",
@@ -49,7 +50,7 @@ export default {
     };
   },
   components:{
-    Home,
+  
   },
   methods: {
     checkViewport() {
@@ -64,16 +65,20 @@ export default {
           password: this.password,
           rememberMe: this.rememberMe,
         }
-      );
+        );
         console.log(response.data);
-        localStorage.setItem(
-          "token",response.data
-      )
+        // localStorage.setItem(
+        //   "token",response.data
+        //     )
+
+          Cookies.set("refreshToken",response.data.refreshToken);
+          console.log(response.data.refreshToken);
+          this.$router.push('/home')
         // Handle successful login (e.g., redirect to dashboard, store token, etc.)
       } catch (error) {
         if (error.response) {
           // The request was made and the server responded with a status code that falls out of the range of 2xx
-          console.error('Response error:', error.response.data);
+          console.error('Response error:', error.response.data,{expires:7});
         } else if (error.request) {
           // The request was made but no response was received
           console.error('No response received:', error.request);
