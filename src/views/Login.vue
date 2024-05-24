@@ -71,7 +71,7 @@ export default {
         //   "token",response.data
         //     )
 
-          Cookies.set("refreshToken",response.data.refreshToken);
+          Cookies.set("refreshToken",this.userName+":"+response.data.refreshToken);
           console.log(response.data.refreshToken);
           this.$router.push('/home')
         // Handle successful login (e.g., redirect to dashboard, store token, etc.)
